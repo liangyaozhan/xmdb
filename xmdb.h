@@ -80,9 +80,11 @@ public:
         bool get_value(const std::string &key, void *data, int len, int *p_outlen = 0);
         bool get_value(const std::string &key, int32_t &value);
         bool get_value(const std::string &key, int64_t &value);
+        bool get_value(const std::string &key, uint16_t &value);
 
         bool commit();
         void abort();
+        void rollback(){ abort();}
     };
 
     /* xmdb factory interface */
